@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { searchQueryOptions } from '../store/atoms';
+import { useSetRecoilState } from 'recoil';
+import { searchQueryOptions } from '../store/states';
 
 function SearchInput() {
   const [searchInput, setSearchInput] = useState('');
-  const [queryOptions, changeQueryParams] = useRecoilState(searchQueryOptions);
+  const changeQueryParams = useSetRecoilState(searchQueryOptions);
 
   const handleChange = useCallback((e) => {
     const text = e.target.value;
@@ -34,7 +34,12 @@ function SearchInput() {
 
   return (
     <>
-      <input type='text' value={searchInput} onChange={handleChange} />
+      <input
+        type='text'
+        placeholder='가수를 검색하세요'
+        value={searchInput}
+        onChange={handleChange}
+      />
       <button type='submit' onClick={handleSubmit}>
         SEARCH
       </button>
