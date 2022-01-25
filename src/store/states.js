@@ -14,6 +14,12 @@ export const searchQueryOptions = atom({
   },
 });
 
+//atoms.ts
+export const dispatcherState = atom({
+  key: 'dispatcherState',
+  default: undefined,
+});
+
 export const searchQuerySelector = selector({
   key: 'searchQuerySelector',
   get: async ({ get }) => {
@@ -21,6 +27,8 @@ export const searchQuerySelector = selector({
     if (options === undefined) return undefined;
 
     const response = await axios.request(options);
+    if (response.error) throw response.error('api error');
+
     const decodedResponseData = {
       ...response.data.hits,
       results: response.data.response.hits.map((res) => {

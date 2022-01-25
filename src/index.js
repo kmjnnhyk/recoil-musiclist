@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,11 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <RecoilRoot>
-    <Suspense fallback={<div>LOADING...</div>}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </RecoilRoot>,
 
   document.getElementById('root')

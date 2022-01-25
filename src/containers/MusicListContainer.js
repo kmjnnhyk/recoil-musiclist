@@ -6,6 +6,7 @@ import { searchQuerySelector } from '../store/states';
 function MusicListContainer() {
   const listQuery = useRecoilValue(searchQuerySelector);
   console.log('musiclist container rendered');
+
   return <>{<MusicList list={listQuery} />}</>;
 }
 
