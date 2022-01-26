@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { atom, selector, useRecoilCallback } from 'recoil';
+import { atom, selector } from 'recoil';
 
+/****** ATOMS ******/
 export const searchQueryOptions = atom({
   key: 'searchQueryOptions',
   default: {
@@ -14,12 +15,22 @@ export const searchQueryOptions = atom({
   },
 });
 
-//atoms.ts
 export const dispatcherState = atom({
   key: 'dispatcherState',
   default: undefined,
 });
 
+export const dispatcherBasketState = atom({
+  key: 'dispatcherBasketState',
+  default: undefined,
+});
+
+export const musicBasketState = atom({
+  key: 'musicBasketState',
+  default: [],
+});
+
+/****** SELECTORS ******/
 export const searchQuerySelector = selector({
   key: 'searchQuerySelector',
   get: async ({ get }) => {
@@ -42,8 +53,4 @@ export const searchQuerySelector = selector({
     };
     return decodedResponseData.results;
   },
-  /* 
-  selector는 atom의 파퍈이기 때문에 set 함수를 따로 설정해주지 않으면
-  사용할 수 없다.
-  */
 });

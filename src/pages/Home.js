@@ -1,17 +1,23 @@
 import React, { Suspense, useEffect, useRef } from 'react';
-import { useSetRecoilState } from 'recoil';
+import { useResetRecoilState, useSetRecoilState } from 'recoil';
+import MusicBasketContainer from '../containers/MusicBasketContainer';
 import MusicListContainer from '../containers/MusicListContainer';
 import MusicSearcherContainer from '../containers/MusicSearcherContainer';
+import { createBasketDispatcher } from '../store/basketDispatcher';
 import { createDispatcher } from '../store/musicDispatcher';
-import { dispatcherState } from '../store/states';
+import { dispatcherBasketState, dispatcherState } from '../store/states';
 
 function Home() {
   const setDispatcher = useSetRecoilState(dispatcherState);
+  const setBasketDispatcher = useSetRecoilState(dispatcherBasketState);
 
   const dispatcherRef = useRef(createDispatcher());
+  const dispatcherBasketRef = useRef(createBasketDispatcher());
+
   useEffect(() => {
     setDispatcher(dispatcherRef.current);
-  }, [setDispatcher]);
+    setBasketDispatcher(dispatcherBasketRef.current);
+  }, [setBasketDispatcher, setDispatcher]);
 
   return (
     <>
@@ -19,6 +25,7 @@ function Home() {
       <Suspense fallback={<div>LOADING...</div>}>
         <MusicListContainer />
       </Suspense>
+      <MusicBasketContainer />
     </>
   );
 }
