@@ -15,6 +15,11 @@ export const searchQueryOptions = atom({
   },
 });
 
+export const musicListState = atom({
+  key: 'musicListState',
+  default: {},
+});
+
 export const dispatcherState = atom({
   key: 'dispatcherState',
   default: undefined,
@@ -28,6 +33,14 @@ export const dispatcherBasketState = atom({
 export const musicBasketState = atom({
   key: 'musicBasketState',
   default: [],
+});
+
+export const windowSizeState = atom({
+  key: 'windowSizeState',
+  default: {
+    width: null,
+    height: null,
+  },
 });
 
 /****** SELECTORS ******/
@@ -52,5 +65,8 @@ export const searchQuerySelector = selector({
       }),
     };
     return decodedResponseData.results;
+  },
+  set: ({ set }, newValue) => {
+    set(musicListState, newValue);
   },
 });
