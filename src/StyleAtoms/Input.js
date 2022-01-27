@@ -9,15 +9,17 @@ export default styled.input`
   line-height: ${({ lineHeight }) => lineHeight};
   height: ${({ height }) => height || '40px'};
   width: ${({ width }) => width || '100%'};
-  border: ${({ border }) => border || '1px solid var(--grey-400)'};
+  border: ${({ border }) => border || '3px solid var(--black)'};
   box-sizing: border-box;
-  border-radius: ${({ borderRadius }) => borderRadius || '8px'};
-  background-color: white;
+  border-radius: ${({ borderRadius }) => borderRadius || '0'};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
   font-size: ${({ fontSize }) => fontSize || '16px'};
+  text-align: center;
+  color: ${({ color }) => color || 'var(--white)'};
   :focus {
     outline: none;
   }
   ::placeholder {
-    color: var(--grey-300);
+    color: var(--deepgrey);
   }
 `;

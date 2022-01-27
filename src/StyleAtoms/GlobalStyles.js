@@ -9,7 +9,7 @@ const GlobalStyles = createGlobalStyle`
     margin:0;
     height: 100%;
     width: 100%;
-    background: var(--deepgrey);
+    background: var(--neongreen);
     font-size:14px;
     font-family: -apple-system, Roboto, BlinkMacSystemFont, sans-serif, Arial;
     user-select: none;
@@ -58,6 +58,7 @@ const GlobalStyles = createGlobalStyle`
   --grey-200: #dcdee1;
   --grey-100: #f5f6f6;
   --white: #ffffff;
+  --neongreen: #00DF26;
   --green-400: #44c46d;
   --yellow: #fede03;
   --orange: #ffa100;

@@ -14,22 +14,34 @@ function SearchInput() {
   }, []);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     dispatcher.changeQuery(searchInput);
     setSearchInput('');
   };
 
   return (
     <>
-      <StyleAtoms.Div margin={'24px 48px'}>
-        <StyleAtoms.Input
-          type='text'
-          placeholder='가수를 검색하세요'
-          value={searchInput}
-          onChange={handleChange}
-        />
-        <button type='submit' onClick={handleSubmit}>
-          SEARCH
-        </button>
+      <StyleAtoms.Div margin={'12px 24px'}>
+        <form onSubmit={handleSubmit}>
+          <StyleAtoms.Input
+            type='name'
+            placeholder='가수를 검색하세요'
+            value={searchInput}
+            onChange={handleChange}
+            height={'50px'}
+            margin={'12px 0'}
+          />
+          <StyleAtoms.Button
+            type='submit'
+            width={'100%'}
+            height={'30px'}
+            background={'var(--black)'}
+            border={'none'}
+            color={'var(--neongreen)'}
+          >
+            SEARCH
+          </StyleAtoms.Button>
+        </form>
       </StyleAtoms.Div>
     </>
   );
