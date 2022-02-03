@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import { useRecoilValue } from 'recoil';
-import { dispatcherState } from '../store/states';
+import { useRecoilValue, useRecoilValueLoadable } from 'recoil';
+import { dispatcherState, searchQuerySelector } from '../store/states';
 import StyleAtoms from '../StyleAtoms';
 
 function SearchInput() {
   const [searchInput, setSearchInput] = useState('');
-
+  const isThereList = useRecoilValueLoadable(searchQuerySelector).contents.length > 0;
   const dispatcher = useRecoilValue(dispatcherState);
 
   const handleChange = useCallback((e) => {
@@ -21,7 +21,14 @@ function SearchInput() {
 
   return (
     <>
-      <StyleAtoms.Div margin={'12px 24px'}>
+      <StyleAtoms.Div
+        margin={!isThereList ? '0 56px' : '12px 128px'}
+        display={!isThereList ? 'grid' : 'block'}
+        alignContent={'center'}
+        //placeItems={!isThereList ? 'center stretch' : 'auto'}
+        height={!isThereList && '100vh'}
+      >
+        {!isThereList && <h1 style={{ fontSize: '96px' }}>MUSIC SEARCHER</h1>}
         <form onSubmit={handleSubmit}>
           <StyleAtoms.Input
             type='name'
@@ -38,6 +45,7 @@ function SearchInput() {
             background={'var(--black)'}
             border={'none'}
             color={'var(--neongreen)'}
+            fontWeight={'900'}
           >
             SEARCH
           </StyleAtoms.Button>

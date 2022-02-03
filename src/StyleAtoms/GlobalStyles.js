@@ -58,6 +58,8 @@ const GlobalStyles = createGlobalStyle`
   --grey-200: #dcdee1;
   --grey-100: #f5f6f6;
   --white: #ffffff;
+  --blue: #096DE0;
+  --neonblue: rgb(38, 0, 255);
   --neongreen: #00DF26;
   --green-400: #44c46d;
   --yellow: #fede03;

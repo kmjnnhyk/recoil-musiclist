@@ -1,7 +1,7 @@
 import { debounce } from 'lodash';
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import Home from './pages/Home';
 import RecomendationPage from './pages/RecomendationPage';
 import { windowSizeState } from './store/states';
@@ -14,13 +14,14 @@ function App() {
       width: window.innerWidth,
       height: window.innerHeight,
     });
-  }, 200);
+  }, 100);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

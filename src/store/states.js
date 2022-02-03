@@ -61,6 +61,7 @@ export const searchQuerySelector = selector({
           id: info.id,
           title: info.full_title,
           thumb_url: info.header_image_thumbnail_url,
+          artist: info.artist_names,
         };
       }),
     };

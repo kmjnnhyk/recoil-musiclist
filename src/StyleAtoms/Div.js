@@ -2,15 +2,21 @@ import styled from 'styled-components';
 
 export default styled.div`
   ${({ display }) => display && `display : ${display}`};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   position: ${({ position }) => position};
   top: ${({ top }) => top};
   right: ${({ right }) => right};
   bottom: ${({ bottom }) => bottom};
   left: ${({ left }) => left};
   flex: ${({ flex }) => flex};
+  grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
+  gap: ${({ gap }) => gap};
   align-content: ${({ alignContent }) => alignContent};
   justify-content: ${({ justifyContent }) => justifyContent};
-  flex-direction: ${({ flexDirection }) => flexDirection};
+  justify-items: ${({ justifyItems }) => justifyItems};
+  place-items: ${({ placeItems }) => placeItems};
+  flex-direction: column;
   ${({ flexWrap }) => flexWrap && `flex-wrap : ${flexWrap}`};
   ${({ flexShrink }) => flexShrink && `flex-shrink : ${flexShrink}`};
   ${({ alignItems }) => alignItems && `align-items : ${alignItems}`};
@@ -40,7 +46,7 @@ export default styled.div`
   border-right: ${({ borderRight }) => borderRight};
   border-bottom: ${({ borderBottom }) => borderBottom};
   border-radius: ${({ borderRadius }) => borderRadius};
-  box-sizing: ${({ boxSizing }) => boxSizing};
+  box-sizing: border-box;
   font-size: ${({ fontSize }) => fontSize};
   font-weight: ${({ fontWeight }) => fontWeight};
   letter-spacing: ${({ letterSpacing }) => letterSpacing};
@@ -51,4 +57,5 @@ export default styled.div`
   z-index: ${({ zIndex }) => zIndex};
   animation: ${({ animation }) => animation};
   transform: ${({ transform }) => transform};
+  ${({ mixBlendMode }) => mixBlendMode && `mix-blend-mode : ${mixBlendMode}`};
 `;

@@ -6,6 +6,7 @@ import MusicSearcherContainer from '../containers/MusicSearcherContainer';
 import { createBasketDispatcher } from '../store/basketDispatcher';
 import { createDispatcher } from '../store/musicDispatcher';
 import { dispatcherBasketState, dispatcherState } from '../store/states';
+import Loading from './Loading';
 
 function Home() {
   const setDispatcher = useSetRecoilState(dispatcherState);
@@ -21,11 +22,11 @@ function Home() {
 
   return (
     <>
-      <MusicSearcherContainer />
-      <Suspense fallback={<div>LOADING...</div>}>
+      <Suspense fallback={<Loading />}>
+        <MusicSearcherContainer />
         <MusicListContainer />
+        <MusicBasketContainer />
       </Suspense>
-      <MusicBasketContainer />
     </>
   );
 }
