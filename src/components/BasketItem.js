@@ -11,7 +11,7 @@ export default function BasketItem({ item }) {
   };
 
   return (
-    <li key={item.id}>
+    <StyleAtoms.Li key={item.id}>
       {item.title}
       <StyleAtoms.Button
         onClick={handleClick}
@@ -23,6 +23,6 @@ export default function BasketItem({ item }) {
       >
         DELETE
       </StyleAtoms.Button>
-    </li>
+    </StyleAtoms.Li>
   );
 }

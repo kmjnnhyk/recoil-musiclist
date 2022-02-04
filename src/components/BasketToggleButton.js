@@ -2,11 +2,12 @@ import React from 'react';
 import StyleAtoms from '../StyleAtoms';
 import { BsMusicPlayerFill } from 'react-icons/bs';
 
-function BasketToggleButton() {
+function BasketToggleButton({ onToggle, totalNum }) {
   return (
     <>
       <StyleAtoms.Button
-        position={'fixed'}
+        onClick={onToggle}
+        position={'absolute'}
         top={'24px'}
         right={'36px'}
         background={'none'}
@@ -24,7 +25,7 @@ function BasketToggleButton() {
           fontWeight={'900'}
           color={'var(--orange)'}
         >
-          0
+          {totalNum}
         </StyleAtoms.Balloon>
       </StyleAtoms.Button>
     </>

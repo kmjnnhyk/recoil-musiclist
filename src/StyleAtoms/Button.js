@@ -36,7 +36,7 @@ export default styled.button`
   background-image: ${({ backgroundImage }) => backgroundImage};
   background-repeat: ${({ backgroundRepeat }) => backgroundRepeat};
   color: ${({ color }) => color};
-  border: ${({ border }) => border};
+  border: none;
   border-right: ${({ borderRight }) => borderRight};
   border-bottom: ${({ borderBottom }) => borderBottom};
   border-radius: ${({ borderRadius }) => borderRadius};
