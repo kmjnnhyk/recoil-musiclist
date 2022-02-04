@@ -71,3 +71,15 @@ export const searchQuerySelector = selector({
     set(musicListState, newValue);
   },
 });
+
+export const musicBasketStateState = selector({
+  key: 'musicBasketStateState',
+  get: ({ get }) => {
+    const basketList = get(musicBasketState);
+    const basketTotalNum = basketList.length;
+
+    return {
+      basketTotalNum,
+    };
+  },
+});
