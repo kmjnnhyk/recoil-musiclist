@@ -5,6 +5,7 @@ import Li from './Li';
 import Balloon from './Balloon';
 import Ul from './Ul';
 import SideBar from './SideBar';
+import P from './P';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -15,4 +16,5 @@ export default {
   Balloon,
   Ul,
   SideBar,
+  P,
 };

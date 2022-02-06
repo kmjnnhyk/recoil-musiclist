@@ -14,11 +14,12 @@ function Basket({ items, isOpen, onToggle }) {
           top={'0'}
           right={'0'}
           background={'var(--neonblue)'}
-          padding={'64px 32px'}
+          padding={'32px 0'}
         >
           <StyleAtoms.Button
             onClick={onToggle}
             background={'none'}
+            marginRight={'12px'}
             marginLeft={'auto'}
             marginBottom={'48px'}
           >

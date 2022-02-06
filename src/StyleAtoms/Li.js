@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export default styled.li`
   list-style: none;
   ${({ display }) => display && `display : ${display}`};
+  width: ${({ width }) => width};
   height: ${({ height }) => height};
   flex-direction: ${({ flexDirection }) => flexDirection};
   grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
@@ -14,8 +15,20 @@ export default styled.li`
   align-items: ${({ alignItems }) => alignItems};
   border: ${({ border }) => border};
   border-bottom: ${({ borderBottom }) => borderBottom};
-  margin-top: 8px;
+  margin: ${({ margin }) => margin};
+  margin-top: ${({ marginTop }) => marginTop};
+  background: ${({ background }) => background};
+  color: ${({ color }) => color};
+  word-break: ${({ wordBreak }) => wordBreak};
+  white-space: ${({ whiteSpace }) => whiteSpace};
   font-size: ${({ fontSize }) => fontSize};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  overflow: ${({ overflow }) => overflow};
+  animation: ${({ animation }) => animation};
+  animation-delay: ${({ animation }) => animation};
+  animation-duration: ${({ animationDuration }) => animationDuration};
+  animation-iteration-count: ${({ animationIterationCount }) => animationIterationCount};
+  animation-name: ${({ animationName }) => animationName};
   :last-child {
     border-bottom: none;
   }
