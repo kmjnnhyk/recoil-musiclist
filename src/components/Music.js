@@ -16,6 +16,7 @@ function Music({ music }) {
   const handleClick = () => {
     console.log(newItem);
     dispatcher.addToBasket(newItem);
+    if (dispatcher.isDuplication) console.log('중복된 항목 제거했습니다.');
   };
 
   console.log('music component');

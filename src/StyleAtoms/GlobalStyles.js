@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @keyframes slidein {
+  @keyframes scrollX {
     from {
       transform: translateX(0);
     }
