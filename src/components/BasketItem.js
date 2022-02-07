@@ -27,7 +27,7 @@ export default function BasketItem({ item }) {
       <StyleAtoms.P
         fontSize={'14px'}
         fontWeight={'100'}
-        animationName={'slidein'}
+        animationName={'scrollX'}
         animationDuration={'12s'}
         animationIterationCount={'infinite'}
         animationTimingFunction={'linear'}

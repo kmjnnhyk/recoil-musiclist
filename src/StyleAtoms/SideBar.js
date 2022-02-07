@@ -5,12 +5,13 @@ export default styled.div`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   top: ${({ top }) => top};
-  right: ${({ right }) => right};
+  right: ${({ state }) => (state === 'entering' || state === 'entered' ? -100 : 0)}%;
   bottom: ${({ bottom }) => bottom};
   left: ${({ left }) => left};
   ${({ display }) => display && `display : ${display}`};
   flex-direction: column;
   background: ${({ background }) => background};
+  opacity: ${({ opacity }) => opacity};
   margin: ${({ margin }) => margin};
   ${({ marginTop }) => marginTop && `margin-top : ${marginTop}`};
   ${({ marginRight }) => marginRight && `margin-right : ${marginRight}`};
@@ -23,4 +24,13 @@ export default styled.div`
   ${({ paddingRight }) => paddingRight && `padding-right : ${paddingRight}`};
   ${({ paddingBottom }) => paddingBottom && `padding-bottom : ${paddingBottom}`};
   ${({ paddingLeft }) => paddingLeft && `padding-left : ${paddingLeft}`};
+  transition: ${({ transition }) => transition};
+  transform: ${({ transform }) => transform};
+  animation: ${({ animation }) => animation};
+  animation-delay: ${({ animation }) => animation};
+  animation-duration: ${({ animationDuration }) => animationDuration};
+  animation-iteration-count: ${({ animationIterationCount }) => animationIterationCount};
+  animation-name: ${({ animationName }) => animationName};
+  animation-timing-function: ${({ animationTimingFunction }) => animationTimingFunction};
+  animation-direction: ${({ animationDirection }) => animationDirection};
 `;
