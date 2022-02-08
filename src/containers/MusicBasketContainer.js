@@ -1,13 +1,16 @@
 import React, { useCallback, useState } from 'react';
-import { useRecoilValue } from 'recoil';
+import { useMemo } from 'react';
+import { useEffect } from 'react';
+import { useRecoilValue, useResetRecoilState } from 'recoil';
 import Basket from '../components/Basket';
 import BasketToggleButton from '../components/BasketToggleButton';
 import { musicBasketState, musicBasketStateState } from '../store/states';
 
 export default function MusicBasketContainer() {
-  const items = useRecoilValue(musicBasketState);
-  const [isOpen, setIsOpen] = useState(false);
+  const { filteredBasketList } = useRecoilValue(musicBasketStateState);
+  const [isOpen, setIsOpen] = useState(true);
   const { basketTotalNum } = useRecoilValue(musicBasketStateState);
+  const resetBasket = useResetRecoilState(musicBasketState);
 
   const onToggle = useCallback(() => {
     setIsOpen(!isOpen);
@@ -17,7 +20,12 @@ export default function MusicBasketContainer() {
   return (
     <>
       <BasketToggleButton onToggle={onToggle} totalNum={basketTotalNum} />
-      <Basket items={items} isOpen={isOpen} onToggle={onToggle} />
+      <Basket
+        items={filteredBasketList}
+        isOpen={isOpen}
+        onToggle={onToggle}
+        onReset={resetBasket}
+      />
     </>
   );
 }
