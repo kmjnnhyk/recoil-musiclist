@@ -76,10 +76,16 @@ export const musicBasketStateState = selector({
   key: 'musicBasketStateState',
   get: ({ get }) => {
     const basketList = get(musicBasketState);
-    const basketTotalNum = basketList.length;
+
+    // eslint-disable-next-line no-undef
+    const filteredBasketList = _.uniqBy(basketList, 'title');
+    const basketTotalNum = filteredBasketList.length;
+    const isBasketDuplicated = filteredBasketList.length === basketTotalNum.length;
 
     return {
+      filteredBasketList,
       basketTotalNum,
+      isBasketDuplicated,
     };
   },
 });
