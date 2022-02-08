@@ -25,8 +25,7 @@ function SearchInput() {
         margin={!isThereList ? '0 56px' : '12px 128px'}
         display={!isThereList ? 'grid' : 'block'}
         alignContent={'center'}
-        //placeItems={!isThereList ? 'center stretch' : 'auto'}
-        height={!isThereList && '100vh'}
+        height={!isThereList ? '100vh' : 'auto'}
       >
         {!isThereList && <h1 style={{ fontSize: '96px' }}>MUSIC SEARCHER</h1>}
         <form onSubmit={handleSubmit}>

@@ -3,20 +3,20 @@ import { useRecoilValue } from 'recoil';
 import { BREAK_POINT } from '../constant';
 import { dispatcherBasketState, windowSizeState } from '../store/states';
 import StyleAtoms from '../StyleAtoms';
+import { getId } from '../utils';
 
 function Music({ music }) {
   const dispatcher = useRecoilValue(dispatcherBasketState);
   const windowSize = useRecoilValue(windowSizeState);
-
-  const newItem = {
-    id: music.id,
-    title: music.title,
-  };
-
   const handleClick = () => {
-    console.log(newItem);
+    const newItem = {
+      id: getId(),
+      title: music.title,
+    };
+    if (dispatcher.isDuplicated) {
+      console.log('중복');
+    }
     dispatcher.addToBasket(newItem);
-    if (dispatcher.isDuplication) console.log('중복된 항목 제거했습니다.');
   };
 
   console.log('music component');

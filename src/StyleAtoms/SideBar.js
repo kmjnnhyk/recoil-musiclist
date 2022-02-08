@@ -10,6 +10,8 @@ export default styled.div`
   left: ${({ left }) => left};
   ${({ display }) => display && `display : ${display}`};
   flex-direction: column;
+  ${({ alignItems }) => alignItems && `align-items : ${alignItems}`};
+  justify-content: ${({ justifyContent }) => justifyContent};
   background: ${({ background }) => background};
   opacity: ${({ opacity }) => opacity};
   margin: ${({ margin }) => margin};
@@ -33,4 +35,7 @@ export default styled.div`
   animation-name: ${({ animationName }) => animationName};
   animation-timing-function: ${({ animationTimingFunction }) => animationTimingFunction};
   animation-direction: ${({ animationDirection }) => animationDirection};
+  overflow: ${({ overflow }) => overflow};
+  overflow-x: ${({ overflowX }) => overflowX};
+  overflow-y: ${({ overflowY }) => overflowY};
 `;

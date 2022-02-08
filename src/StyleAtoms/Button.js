@@ -51,4 +51,5 @@ export default styled.button`
   z-index: ${({ zIndex }) => zIndex};
   animation: ${({ animation }) => animation};
   transform: ${({ transform }) => transform};
+  pointer-events: ${({ pointerEvents }) => pointerEvents};
 `;

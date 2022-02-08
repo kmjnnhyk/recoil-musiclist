@@ -12,6 +12,7 @@ function BasketToggleButton({ onToggle, totalNum }) {
         right={'36px'}
         background={'none'}
         border={'none'}
+        pointerEvents={totalNum === 0 && 'none'}
       >
         <BsMusicPlayerFill size='48' color='var(--black)' />
         <StyleAtoms.Balloon

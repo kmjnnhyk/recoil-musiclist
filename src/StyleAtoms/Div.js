@@ -36,6 +36,7 @@ export default styled.div`
   ${({ paddingLeft }) => paddingLeft && `padding-left : ${paddingLeft}`};
   ${({ height }) => height && `height : ${height}`};
   ${({ minHeight }) => minHeight && `min-height : ${minHeight}`};
+  ${({ maxHeight }) => maxHeight && `max-height : ${maxHeight}`};
   ${({ width }) => width && `width : ${width}`};
   ${({ maxWidth }) => maxWidth && `max-width : ${maxWidth}`};
   background: ${({ background }) => background};
@@ -53,9 +54,14 @@ export default styled.div`
   line-height: ${({ lineHeight }) => lineHeight};
   box-shadow: ${({ boxShadow }) => boxShadow};
   overflow: ${({ overflow }) => overflow};
+  overflow-x: ${({ overflowX }) => overflowX};
+  overflow-y: ${({ overflowY }) => overflowY};
   cursor: ${({ cursor }) => cursor};
   z-index: ${({ zIndex }) => zIndex};
   animation: ${({ animation }) => animation};
   transform: ${({ transform }) => transform};
   ${({ mixBlendMode }) => mixBlendMode && `mix-blend-mode : ${mixBlendMode}`};
+  ::-webkit-scrollbar {
+    width: ${({ scrollbarWidth }) => scrollbarWidth};
+  }
 `;
