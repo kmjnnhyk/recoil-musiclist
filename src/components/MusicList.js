@@ -5,7 +5,7 @@ import { windowSizeState } from '../store/states';
 import StyleAtoms from '../StyleAtoms';
 import Music from './Music';
 
-function MusicList({ list }) {
+function MusicList({ list, handleCreate }) {
   const windowSize = useRecoilValue(windowSizeState);
   console.log('musiclist component');
   console.log(windowSize.width);
@@ -25,7 +25,9 @@ function MusicList({ list }) {
           padding={'24px 24px'}
         >
           {list.map((music) => {
-            return <Music music={music} key={music.id} />;
+            return (
+              <Music handleCreate={() => handleCreate()} music={music} key={music.id} />
+            );
           })}
         </StyleAtoms.Div>
       )}

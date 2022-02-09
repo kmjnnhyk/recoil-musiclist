@@ -13,7 +13,6 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </RecoilRoot>,
-
   document.getElementById('root')
 );
 

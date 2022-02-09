@@ -79,8 +79,8 @@ export const musicBasketStateState = selector({
 
     // eslint-disable-next-line no-undef
     const filteredBasketList = _.uniqBy(basketList, 'title');
+    const isBasketDuplicated = filteredBasketList.length !== basketList.length;
     const basketTotalNum = filteredBasketList.length;
-    const isBasketDuplicated = filteredBasketList.length === basketTotalNum.length;
 
     return {
       filteredBasketList,

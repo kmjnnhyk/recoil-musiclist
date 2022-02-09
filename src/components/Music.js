@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import { BREAK_POINT } from '../constant';
 import { dispatcherBasketState, windowSizeState } from '../store/states';
@@ -8,15 +9,9 @@ import { getId } from '../utils';
 function Music({ music }) {
   const dispatcher = useRecoilValue(dispatcherBasketState);
   const windowSize = useRecoilValue(windowSizeState);
+
   const handleClick = () => {
-    const newItem = {
-      id: getId(),
-      title: music.title,
-    };
-    if (dispatcher.isDuplicated) {
-      console.log('중복');
-    }
-    dispatcher.addToBasket(newItem);
+    dispatcher.addToBasket(getId(), music.title);
   };
 
   console.log('music component');
