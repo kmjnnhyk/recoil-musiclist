@@ -2,8 +2,8 @@ import { debounce } from 'lodash';
 import { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
+import { ModalProvider } from './mordal/ModalContext';
 import Home from './pages/Home';
-import RecomendationPage from './pages/RecomendationPage';
 import { windowSizeState } from './store/states';
 
 function App() {
@@ -25,10 +25,11 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='recommendation' element={<RecomendationPage />} />
-    </Routes>
+    <ModalProvider>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </ModalProvider>
   );
 }
 

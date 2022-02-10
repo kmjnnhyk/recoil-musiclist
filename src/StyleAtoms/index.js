@@ -6,6 +6,7 @@ import Balloon from './Balloon';
 import Ul from './Ul';
 import SideBar from './SideBar';
 import P from './P';
+import Modal from './Modal';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -17,4 +18,5 @@ export default {
   Ul,
   SideBar,
   P,
+  Modal,
 };

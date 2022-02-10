@@ -5,7 +5,7 @@ import { MdClose } from 'react-icons/md';
 import { Transition } from 'react-transition-group';
 
 function Basket({ items, isOpen, onToggle, onReset }) {
-  console.log('basket');
+  console.log('basket component');
   return (
     <>
       <Transition in={isOpen} timeout={500}>
