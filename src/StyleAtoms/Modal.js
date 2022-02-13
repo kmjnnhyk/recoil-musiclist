@@ -12,7 +12,7 @@ export default styled.div`
   height: ${({ height }) => height};
   right: 50%;
   bottom: 34px;
-  transform: translateX(50%);
+  transform: 
   animation: ${({ animation }) => animation};
   animation-delay: ${({ animation }) => animation};
   animation-name: toast;

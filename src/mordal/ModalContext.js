@@ -5,10 +5,10 @@ import useModal from './useModal';
 const ModalContext = React.createContext();
 
 const ModalProvider = ({ children }) => {
-  const { modal, modalContent, openModal, closeModal } = useModal();
+  const { modal, modalContent, openModal } = useModal();
   return (
-    <ModalContext.Provider value={{ modal, modalContent, openModal, closeModal }}>
-      <Modal />
+    <ModalContext.Provider value={{ openModal }}>
+      <Modal modal={modal} modalContent={modalContent} />
       {children}
     </ModalContext.Provider>
   );

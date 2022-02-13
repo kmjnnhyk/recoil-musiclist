@@ -1,13 +1,15 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
+import { ModalContext } from '../mordal/ModalContext';
 import { dispatcherBasketState } from '../store/states';
 import StyleAtoms from '../StyleAtoms';
 
 export default function BasketItem({ item }) {
   const dispatcher = useRecoilValue(dispatcherBasketState);
-
+  const { openModal } = React.useContext(ModalContext);
   const handleClick = () => {
     dispatcher.deleteFromBasket(item.id);
+    openModal(<div>DELETE</div>);
   };
 
   return (

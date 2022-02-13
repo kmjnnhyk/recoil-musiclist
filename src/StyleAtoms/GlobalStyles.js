@@ -12,37 +12,37 @@ const GlobalStyles = createGlobalStyle`
 
   @keyframes toast {
     0% {
-      transform: translateY(0%);
+      transform: translateX(50%) translateY(0%);
       opacity: 0;
     }
   
     16% {
-      transform: translateY(-132.27%);
+      transform: translateX(50%) translateY(-132.27%);
+      opacity: 1;
     }
   
     28% {
-      transform: translateY(-86.88%);
+      transform: translateX(50%) translateY(-86.88%);
     }
   
     44% {
-      transform: translateY(-104.63%);
+      transform: translateX(50%) translateY(-104.63%);
     }
   
     59% {
-      transform: translateY(-98.36%);
+      transform: translateX(50%) translateY(-98.36%);
     }
   
     73% {
-      transform: translateY(-100.58%);
+      transform: translateX(50%) translateY(-100.58%);
     }
   
     88% {
-      transform: translateY(-99.8%);
+      transform: translateX(50%) translateY(-99.8%);
     }
   
     100% {
-      transform: translateY(-100%);
-      opacity: 1;
+      transform: translateX(50%) translateY(-100%);
     }
   }
 
