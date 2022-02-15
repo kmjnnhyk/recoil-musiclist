@@ -2,7 +2,6 @@ import { debounce } from 'lodash';
 import { useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
-import { ModalProvider } from './mordal/ModalContext';
 import Home from './pages/Home';
 import { windowSizeState } from './store/states';
 
@@ -25,11 +24,9 @@ function App() {
   }, []);
 
   return (
-    <ModalProvider>
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
-    </ModalProvider>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
   );
 }
 

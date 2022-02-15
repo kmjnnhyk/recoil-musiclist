@@ -43,6 +43,11 @@ export const windowSizeState = atom({
   },
 });
 
+export const toastState = atom({
+  key: 'toastState',
+  default: [],
+});
+
 /****** SELECTORS ******/
 export const searchQuerySelector = selector({
   key: 'searchQuerySelector',

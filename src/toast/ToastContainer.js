@@ -1,4 +1,3 @@
-import Toast from '../components/Toast';
 import { useToast } from './useToast';
 import StyleAtoms from '../StyleAtoms';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';

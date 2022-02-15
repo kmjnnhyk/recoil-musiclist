@@ -1,19 +1,25 @@
 import React from 'react';
-import { useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { BREAK_POINT } from '../constant';
-import { ModalContext } from '../mordal/ModalContext';
-import { dispatcherBasketState, windowSizeState } from '../store/states';
+import {
+  dispatcherBasketState,
+  musicBasketStateState,
+  windowSizeState,
+} from '../store/states';
 import StyleAtoms from '../StyleAtoms';
+import { useToast } from '../toast/useToast';
 import { getId } from '../utils';
 
 function Music({ music }) {
   const dispatcher = useRecoilValue(dispatcherBasketState);
-  const { openModal } = React.useContext(ModalContext);
   const windowSize = useRecoilValue(windowSizeState);
+  const { isBasketDuplicated } = useRecoilValue(musicBasketStateState);
+  const { openToast } = useToast();
 
   const handleClick = () => {
     dispatcher.addToBasket(getId(), music.title);
-    openModal(<div>ADD</div>);
+    console.log(isBasketDuplicated);
+    openToast({ content: 'ADD' });
   };
 
   console.log('music component');

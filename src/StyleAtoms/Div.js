@@ -10,13 +10,13 @@ export default styled.div`
   bottom: ${({ bottom }) => bottom};
   left: ${({ left }) => left};
   flex: ${({ flex }) => flex};
+  flex-direction: ${({ flexDirection }) => flexDirection};
   grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
   gap: ${({ gap }) => gap};
   align-content: ${({ alignContent }) => alignContent};
   justify-content: ${({ justifyContent }) => justifyContent};
   justify-items: ${({ justifyItems }) => justifyItems};
   place-items: ${({ placeItems }) => placeItems};
-  flex-direction: column;
   ${({ flexWrap }) => flexWrap && `flex-wrap : ${flexWrap}`};
   ${({ flexShrink }) => flexShrink && `flex-shrink : ${flexShrink}`};
   ${({ alignItems }) => alignItems && `align-items : ${alignItems}`};
@@ -60,6 +60,7 @@ export default styled.div`
   z-index: ${({ zIndex }) => zIndex};
   animation: ${({ animation }) => animation};
   transform: ${({ transform }) => transform};
+  opacity: ${({ opacity }) => opacity};
   ${({ mixBlendMode }) => mixBlendMode && `mix-blend-mode : ${mixBlendMode}`};
   ::-webkit-scrollbar {
     width: ${({ scrollbarWidth }) => scrollbarWidth};

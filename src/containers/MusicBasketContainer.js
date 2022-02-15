@@ -10,8 +10,7 @@ import {
 } from '../store/states';
 
 export default function MusicBasketContainer() {
-  const { filteredBasketList, basketTotalNum, isBasketDuplicated } =
-    useRecoilValue(musicBasketStateState);
+  const { filteredBasketList, basketTotalNum } = useRecoilValue(musicBasketStateState);
   const [isOpen, setIsOpen] = useState(true);
   const resetBasket = useResetRecoilState(musicBasketState);
 
@@ -27,7 +26,6 @@ export default function MusicBasketContainer() {
   }, [isOpen]);
 
   console.log('music Basket container rendered');
-  console.log('바스켓 중복', isBasketDuplicated);
   return (
     <>
       <BasketToggleButton onToggle={onToggle} totalNum={basketTotalNum} />

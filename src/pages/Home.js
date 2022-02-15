@@ -5,6 +5,7 @@ import MusicListContainer from '../containers/MusicListContainer';
 import MusicSearcherContainer from '../containers/MusicSearcherContainer';
 import { createDispatcher } from '../store/musicDispatcher';
 import { dispatcherState } from '../store/states';
+import ToastContainer from '../toast/ToastContainer';
 import Loading from './Loading';
 
 function Home() {
@@ -20,9 +21,11 @@ function Home() {
     <>
       <Suspense fallback={<Loading />}>
         <MusicSearcherContainer />
+
         <MusicListContainer />
-        <MusicBasketContainer />
       </Suspense>
+      <MusicBasketContainer />
+      <ToastContainer />
     </>
   );
 }
