@@ -1,30 +1,26 @@
 import React from 'react';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { BREAK_POINT } from '../constant';
 import {
   dispatcherBasketState,
-  musicBasketState,
   musicBasketStateState,
   windowSizeState,
 } from '../store/states';
 import StyleAtoms from '../StyleAtoms';
 import { useToast } from '../toast/useToast';
-import { getId } from '../utils';
+import { getId, getRandomID } from '../utils';
 
 function Music({ music }) {
   const dispatcher = useRecoilValue(dispatcherBasketState);
   const windowSize = useRecoilValue(windowSizeState);
-  const { isBasketDuplicated, filteredBasketList } =
-    useRecoilValue(musicBasketStateState);
+  const { isBasketDuplicated } = useRecoilValue(musicBasketStateState);
   const { openToast } = useToast();
 
   const handleClick = () => {
-    dispatcher.addToBasket(getId(), music.title);
+    dispatcher.addToBasket(getRandomID(), music.title);
     console.log('isBasketDuplicated', isBasketDuplicated);
     openToast({ content: 'ADD' });
   };
-
-  console.log('music component');
 
   return (
     <StyleAtoms.Li

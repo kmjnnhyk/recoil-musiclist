@@ -5,9 +5,10 @@ export const createBasketDispatcher = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const addToBasket = useRecoilCallback(({ set }) => (id, title) => {
     const item = {
-      ...id,
-      ...title,
+      id: id,
+      title: title,
     };
+    console.log('basket', item);
     set(musicBasketState, (oldItems) => [...oldItems, item]);
   });
 

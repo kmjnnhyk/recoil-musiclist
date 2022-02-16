@@ -90,5 +90,5 @@ export const musicBasketStateState = selector({
       isBasketDuplicated,
     };
   },
-  set: ({ set }, newValue) => set(musicBasketState, newValue),
+  //set: ({ set }, newValue) => set(musicBasketState, newValue),
 });

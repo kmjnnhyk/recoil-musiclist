@@ -13,6 +13,7 @@ export default function MusicBasketContainer() {
   const { filteredBasketList, basketTotalNum } = useRecoilValue(musicBasketStateState);
   const [isOpen, setIsOpen] = useState(true);
   const resetBasket = useResetRecoilState(musicBasketState);
+  const basket = useRecoilValue(musicBasketState);
 
   const setBasketDispatcher = useSetRecoilState(dispatcherBasketState);
   const dispatcherBasketRef = useRef(createBasketDispatcher());
@@ -25,7 +26,7 @@ export default function MusicBasketContainer() {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
-  console.log('music Basket container rendered');
+  console.log('music Basket container rendered', basket);
   return (
     <>
       <BasketToggleButton onToggle={onToggle} totalNum={basketTotalNum} />

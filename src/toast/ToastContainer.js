@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const ToastContainer = () => {
   const { toasts } = useToast();
-  console.log('Toast Container');
+  console.log('Toast Container', toasts);
   return (
     <>
       <StyleAtoms.Div

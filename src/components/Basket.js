@@ -39,7 +39,7 @@ function Basket({ items, isOpen, onToggle, onReset }) {
               scrollbarWidth={'0'}
             >
               {items.map((item) => {
-                return <BasketItem item={item} key={item.id} />;
+                return <BasketItem item={item} key={item.title} />;
               })}
             </StyleAtoms.Div>
             {items.length !== 0 && (
