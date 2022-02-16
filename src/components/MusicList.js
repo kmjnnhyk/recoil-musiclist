@@ -25,7 +25,7 @@ function MusicList({ list }) {
           padding={'24px 24px'}
         >
           {list.map((music) => {
-            return <Music music={music} key={music.id} />;
+            return <Music music={music} key={music} />;
           })}
         </StyleAtoms.Div>
       )}

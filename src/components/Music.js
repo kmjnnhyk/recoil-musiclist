@@ -1,8 +1,9 @@
 import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { BREAK_POINT } from '../constant';
 import {
   dispatcherBasketState,
+  musicBasketState,
   musicBasketStateState,
   windowSizeState,
 } from '../store/states';
@@ -13,12 +14,13 @@ import { getId } from '../utils';
 function Music({ music }) {
   const dispatcher = useRecoilValue(dispatcherBasketState);
   const windowSize = useRecoilValue(windowSizeState);
-  const { isBasketDuplicated } = useRecoilValue(musicBasketStateState);
+  const { isBasketDuplicated, filteredBasketList } =
+    useRecoilValue(musicBasketStateState);
   const { openToast } = useToast();
 
   const handleClick = () => {
     dispatcher.addToBasket(getId(), music.title);
-    console.log(isBasketDuplicated);
+    console.log('isBasketDuplicated', isBasketDuplicated);
     openToast({ content: 'ADD' });
   };
 

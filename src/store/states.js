@@ -72,9 +72,6 @@ export const searchQuerySelector = selector({
     };
     return decodedResponseData.results;
   },
-  set: ({ set }, newValue) => {
-    set(musicListState, newValue);
-  },
 });
 
 export const musicBasketStateState = selector({
@@ -93,4 +90,5 @@ export const musicBasketStateState = selector({
       isBasketDuplicated,
     };
   },
+  set: ({ set }, newValue) => set(musicBasketState, newValue),
 });
