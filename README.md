@@ -328,15 +328,15 @@ export default {
 이번 프로젝트에서는 주로 `styled-components`와 `react-transition-group` 라이브러리를 이용하여 css를 작업했습니다. styled-components는 위 코드처럼 모듈화를 통해 직업 컴포넌트에서 수정 및 props 전달을 통해 좀 더 직관적으로 작업할 수 있게 되었습니다. react-transition-group은 번들 사이즈가 비교적 가장 작은 라이브러리라 이 프로젝트는 간단한 반응형 애니메이션을 구현하면 적당하기 때문에 선택했습니다.
 
 - 검색 화면
-  <img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900550-9540a1c1-c094-4a84-a040-7a4e6294d779.gif">
+<img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900550-9540a1c1-c094-4a84-a040-7a4e6294d779.gif">
   <br/>
 
 - 반응형 음악 리스트
-  <img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900561-c0592147-a1bb-4b88-b873-ecceffb38440.gif">
+<img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900561-c0592147-a1bb-4b88-b873-ecceffb38440.gif">
   <br/>
 
 - 음악 추가
-  <img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900530-f1b3d249-c5a5-4d84-a7bf-08577682b110.gif">
+<img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900530-f1b3d249-c5a5-4d84-a7bf-08577682b110.gif">
   <br/>
   toast 각각의 id가 트리거가 되어서 생성되거나 사라질때의 애니메이션을 정의하여 구현합니다.
 
@@ -395,7 +395,7 @@ export default {
   ```
 
 - 반응형 음악 장바구니
-  <img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900557-e478dc2f-112d-4d0e-ba1f-fec750fd3df4.gif">
+<img width="480" alt="gif files" src="https://user-images.githubusercontent.com/80577900/154900557-e478dc2f-112d-4d0e-ba1f-fec750fd3df4.gif">
 
 ## 📍프로젝트를 마치며
 
