@@ -10,7 +10,6 @@ import Loading from './Loading';
 
 function Home() {
   const setDispatcher = useSetRecoilState(dispatcherState);
-
   const dispatcherRef = useRef(createDispatcher());
 
   useEffect(() => {
@@ -21,10 +20,9 @@ function Home() {
     <>
       <Suspense fallback={<Loading />}>
         <MusicSearcherContainer />
-
         <MusicListContainer />
+        <MusicBasketContainer />
       </Suspense>
-      <MusicBasketContainer />
       <ToastContainer />
     </>
   );

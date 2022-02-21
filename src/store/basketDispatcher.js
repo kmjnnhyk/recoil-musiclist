@@ -1,23 +1,44 @@
 import { useRecoilCallback } from 'recoil';
+import { useToast } from '../toast/useToast';
 import { musicBasketState } from './states';
 
-export const createBasketDispatcher = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const addToBasket = useRecoilCallback(({ set }) => (id, title) => {
+export const CreateBasketDispatcher = () => {
+  const { openToast } = useToast();
+
+  const addToBasket = useRecoilCallback(({ set }) => (newId, newTitle) => {
     const item = {
-      id: id,
-      title: title,
+      id: newId,
+      title: newTitle,
     };
-    console.log('basket', item);
-    set(musicBasketState, (oldItems) => [...oldItems, item]);
+
+    set(musicBasketState, (oldItems) => {
+      let duplicated = false;
+      /* basket 중복 검사 */
+      for (var i = 0; i < oldItems.length; i++) {
+        if (oldItems[i].title === newTitle) {
+          duplicated = true;
+          break;
+        }
+      }
+      if (duplicated) {
+        openToast({ content: 'DUPLICATED' });
+        duplicated = false;
+        return [...oldItems];
+      } else {
+        openToast({ content: 'ADD' });
+        return [...oldItems, item];
+      }
+    });
+    // duplication ? openToast({ content: 'DUPLICATED' }) : openToast({ content: 'ADD' });
   });
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const deleteFromBasket = useRecoilCallback(({ set }) => (id) => {
     set(musicBasketState, (oldItems) => {
+      openToast({ content: 'DELETED' });
       return oldItems.filter((oldItem) => oldItem.id !== id);
     });
   });
+
   return {
     addToBasket,
     deleteFromBasket,

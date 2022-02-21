@@ -1,5 +1,5 @@
 import { debounce } from 'lodash';
-import { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import Home from './pages/Home';
@@ -15,7 +15,8 @@ function App() {
     });
   }, 100);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    window.addEventListener('load', handleResize);
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);

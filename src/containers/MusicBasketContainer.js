@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import Basket from '../components/Basket';
 import BasketToggleButton from '../components/BasketToggleButton';
-import { createBasketDispatcher } from '../store/basketDispatcher';
+import { CreateBasketDispatcher } from '../store/basketDispatcher';
 import {
   dispatcherBasketState,
   musicBasketState,
@@ -10,13 +10,13 @@ import {
 } from '../store/states';
 
 export default function MusicBasketContainer() {
-  const { filteredBasketList, basketTotalNum } = useRecoilValue(musicBasketStateState);
   const [isOpen, setIsOpen] = useState(true);
+  const basketList = useRecoilValue(musicBasketState);
   const resetBasket = useResetRecoilState(musicBasketState);
-  const basket = useRecoilValue(musicBasketState);
+  const { basketTotalNum } = useRecoilValue(musicBasketStateState);
 
   const setBasketDispatcher = useSetRecoilState(dispatcherBasketState);
-  const dispatcherBasketRef = useRef(createBasketDispatcher());
+  const dispatcherBasketRef = useRef(CreateBasketDispatcher());
 
   useEffect(() => {
     setBasketDispatcher(dispatcherBasketRef.current);
@@ -26,12 +26,12 @@ export default function MusicBasketContainer() {
     setIsOpen(!isOpen);
   }, [isOpen]);
 
-  console.log('music Basket container rendered', basket);
+  console.log('music Basket container rendered');
   return (
     <>
       <BasketToggleButton onToggle={onToggle} totalNum={basketTotalNum} />
       <Basket
-        items={filteredBasketList}
+        items={basketList}
         isOpen={isOpen}
         onToggle={onToggle}
         onReset={resetBasket}

@@ -10,42 +10,6 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
-  @keyframes toast {
-    0% {
-      transform: translateX(50%) translateY(0%);
-      opacity: 0;
-    }
-  
-    16% {
-      transform: translateX(50%) translateY(-132.27%);
-      opacity: 1;
-    }
-  
-    28% {
-      transform: translateX(50%) translateY(-86.88%);
-    }
-  
-    44% {
-      transform: translateX(50%) translateY(-104.63%);
-    }
-  
-    59% {
-      transform: translateX(50%) translateY(-98.36%);
-    }
-  
-    73% {
-      transform: translateX(50%) translateY(-100.58%);
-    }
-  
-    88% {
-      transform: translateX(50%) translateY(-99.8%);
-    }
-  
-    100% {
-      transform: translateX(50%) translateY(-100%);
-    }
-  }
-
   html{
     height: 100%;
     width: 100%;  

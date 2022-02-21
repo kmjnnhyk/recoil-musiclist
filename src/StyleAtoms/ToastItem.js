@@ -5,7 +5,7 @@ export default styled.div`
   display: grid;
   place-items: center;
   font-size: ${({ fontSize }) => fontSize};
-  font-weight: ${({ fontWeight }) => fontWeight};
+  font-weight: 900;
   position: ${({ position }) => position};
   width: 100%;
   height: ${({ height }) => height};
